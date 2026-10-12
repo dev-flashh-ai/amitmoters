@@ -1,0 +1,23 @@
+import './globals.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import FloatingActions from '../components/FloatingActions';
+
+export const metadata = {
+  title: 'Amit Motor Lening Work | Car Accessories in Bhavnagar',
+  description: 'Premium car accessories, styling, modifications and installations by Amitbhai Parmar. Serving all Gujarat for 40+ years.',
+  keywords: 'car accessories Bhavnagar, car modification Gujarat, seat covers, LED lights, music systems',
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <FloatingActions />
+      </body>
+    </html>
+  );
+}
