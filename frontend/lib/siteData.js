@@ -1,5 +1,5 @@
 export const business = {
-  name: 'Amit Motor Lening Work',
+  name: 'Amit Motor Car Accessories',
   owner: 'Amitbhai Parmar',
   phone: '9824994998',
   whatsapp: '919824994998',
@@ -8,19 +8,21 @@ export const business = {
 };
 
 export const services = [
-  { title: 'Premium Seat Covers', description: 'Tailored comfort and a refined finish for every drive.', image: 'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1000&q=85', tag: 'Interior' },
-  { title: 'Music Systems', description: 'Immersive sound upgrades tuned for your car and your taste.', image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=85', tag: 'Audio' },
-  { title: 'LED Lighting', description: 'Sharper visibility and a striking modern road presence.', image: 'https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=85', tag: 'Lighting' },
-  { title: 'Interior Styling', description: 'Make your cabin feel personal, premium and perfectly finished.', image: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1000&q=85', tag: 'Custom' },
-  { title: 'Steering Covers', description: 'Better grip, lasting comfort and a detail that completes the cabin.', image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1000&q=85', tag: 'Interior' },
-  { title: 'Bus & Traveller Accessories', description: 'Reliable, comfortable upgrades for commercial and family travel.', image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1000&q=85', tag: 'Commercial' },
+  { title: 'Custom Seat Covers', description: 'Comfortable, tailored finishes in styles that suit your cabin.', image: '/accessories/seat-cover.png', imageCredit: 'Amaijani12 · CC BY-SA 4.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Car-seat-cover.png', tag: 'Interior' },
+  { title: '7D EVA Floor Mats', description: 'A precise-fit layer that helps keep every footwell protected.', image: '/accessories/eva-mats.jpg', imageCredit: 'EVACARMAT · CC BY-SA 4.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Eva_Car_Mats.jpg', tag: 'Protection' },
+  { title: 'Android Music Systems', description: 'Bring clearer sound and easy everyday connectivity to your drive.', image: '/accessories/stereo.jpg', imageCredit: 'Sobinsiril · CC0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:1din_car_headunit.jpg', tag: 'Audio' },
+  { title: 'Tailored Carpet Mats', description: 'A clean, comfortable fit made for your vehicle’s floor space.', image: '/accessories/fitted-mats.jpg', imageCredit: 'Keystones · CC BY-SA 3.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Car_mats_fitted.jpg', tag: 'Protection' },
+  { title: 'Cabin Styling', description: 'Thoughtful interior details for a cabin that feels like your own.', image: '/accessories/seat-cover.png', imageCredit: 'Amaijani12 · CC BY-SA 4.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Car-seat-cover.png', tag: 'Interior' },
+  { title: 'Dashboard & Audio Upgrades', description: 'Modern controls and a more enjoyable in-car listening experience.', image: '/accessories/stereo.jpg', imageCredit: 'Sobinsiril · CC0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:1din_car_headunit.jpg', tag: 'Technology' },
+  { title: 'Comfort Accessories', description: 'Practical finishing touches for daily commutes and longer journeys.', image: '/accessories/eva-mats.jpg', imageCredit: 'EVACARMAT · CC BY-SA 4.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Eva_Car_Mats.jpg', tag: 'Comfort' },
+  { title: 'Bus & Traveller Accessories', description: 'Comfort-focused upgrades for commercial and family travel.', image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1000&q=85', tag: 'Commercial' },
 ];
 
 export const gallery = [
-  { title: 'Luxury cabin finish', image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1200&q=85' },
-  { title: 'Bold road presence', image: 'https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1200&q=85' },
-  { title: 'Detail-led styling', image: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=85' },
-  { title: 'Premium interiors', image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=85' },
+  { title: 'Custom seat covers', image: '/accessories/seat-cover.png', imageCredit: 'Amaijani12 · CC BY-SA 4.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Car-seat-cover.png' },
+  { title: '7D EVA floor mats', image: '/accessories/eva-mats.jpg', imageCredit: 'EVACARMAT · CC BY-SA 4.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Eva_Car_Mats.jpg' },
+  { title: 'Music system upgrades', image: '/accessories/stereo.jpg', imageCredit: 'Sobinsiril · CC0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:1din_car_headunit.jpg' },
+  { title: 'Tailored carpet mats', image: '/accessories/fitted-mats.jpg', imageCredit: 'Keystones · CC BY-SA 3.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Car_mats_fitted.jpg' },
 ];
 
 export const reviews = [
@@ -29,6 +31,6 @@ export const reviews = [
   { quote: 'Trusted work, fair advice and great attention to detail. I recommend Amit Motor to every car owner.', name: 'Happy customer', location: 'Bhavnagar' },
 ];
 
-export function whatsappLink(message = 'Hello Amit Motor Lening Work, I would like to enquire about your services.') {
+export function whatsappLink(message = 'Hello Amit Motor Car Accessories, I would like to enquire about your services.') {
   return `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(message)}`;
 }

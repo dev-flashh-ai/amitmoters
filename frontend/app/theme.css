@@ -1,0 +1,215 @@
+:root {
+  color-scheme: light;
+  --surface: #fff;
+  --surface-raised: #f4f6f8;
+  --field: #fff;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+  --ink: #f1f3ee;
+  --muted: #aeb8b2;
+  --cream: #111816;
+  --line: #34413c;
+  --white: #1b2421;
+  --surface: #1b2421;
+  --surface-raised: #252f2b;
+  --field: #151e1b;
+}
+
+.brand-badge {
+  border-radius: 10px;
+  letter-spacing: 0;
+}
+
+.hero-bg {
+  background-image: linear-gradient(90deg, rgb(255 255 255 / 97%) 0%, rgb(255 255 255 / 82%) 42%, rgb(255 255 255 / 12%) 78%), url('/accessories/eva-mats.jpg');
+  background-position: center, 70% center;
+}
+
+.about-hero {
+  background-image: linear-gradient(90deg, rgb(255 255 255 / 97%) 30%, rgb(255 255 255 / 55%)), url('/accessories/seat-cover.png');
+}
+
+.contact-hero {
+  background-image: linear-gradient(90deg, rgb(255 255 255 / 97%) 30%, rgb(255 255 255 / 48%)), url('/accessories/stereo.jpg');
+}
+
+.nav-call {
+  transition: background-color .2s, color .2s, transform .2s;
+}
+
+.nav-call:hover {
+  background: var(--orange-dark);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.nav-call:focus-visible,
+.theme-toggle:focus-visible,
+.main-nav a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface-raised);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color .2s, color .2s, background-color .2s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.theme-toggle svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.gallery-item {
+  margin: 0;
+}
+
+.gallery-item figcaption {
+  position: absolute;
+  inset: auto 16px 15px;
+  display: flex;
+  align-items: flex-end;
+  gap: 13px;
+  color: #fff;
+  text-shadow: 0 1px 6px #193052;
+}
+
+.gallery-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.image-credit {
+  color: #f0f1ef;
+  font-size: 10px;
+  line-height: 1.35;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.gallery-copy .image-credit {
+  width: fit-content;
+}
+
+.service-image .image-credit {
+  position: absolute;
+  right: 9px;
+  bottom: 9px;
+  max-width: calc(100% - 18px);
+  padding: 4px 6px;
+  background: rgb(11 23 53 / 72%);
+}
+
+html[data-theme='dark'] body,
+html[data-theme='dark'] .site-header,
+html[data-theme='dark'] .main-nav,
+html[data-theme='dark'] .hero,
+html[data-theme='dark'] .intro-section,
+html[data-theme='dark'] .gallery-section,
+html[data-theme='dark'] .cta-section,
+html[data-theme='dark'] .page-hero,
+html[data-theme='dark'] .story-section,
+html[data-theme='dark'] .contact-section,
+html[data-theme='dark'] .site-footer,
+html[data-theme='dark'] .service-card,
+html[data-theme='dark'] .review {
+  background-color: var(--surface);
+  color: var(--ink);
+}
+
+html[data-theme='dark'] .services-preview,
+html[data-theme='dark'] .services-page,
+html[data-theme='dark'] .reviews-section,
+html[data-theme='dark'] .contact-form {
+  background-color: var(--cream);
+}
+
+html[data-theme='dark'] .hero-bg {
+  filter: brightness(.4) saturate(.8);
+}
+
+html[data-theme='dark'] .hero-copy,
+html[data-theme='dark'] .hero-proof,
+html[data-theme='dark'] .hero-scroll,
+html[data-theme='dark'] .page-hero p:last-child,
+html[data-theme='dark'] .footer-intro,
+html[data-theme='dark'] .site-footer div:not(.brand-badge) a,
+html[data-theme='dark'] .site-footer div:not(.brand-badge) span {
+  color: var(--muted);
+}
+
+html[data-theme='dark'] .hero-proof {
+  border-color: var(--line);
+}
+
+html[data-theme='dark'] .hero-proof strong {
+  color: var(--ink);
+}
+
+html[data-theme='dark'] .button-ghost,
+html[data-theme='dark'] .service-tag {
+  background: var(--surface-raised);
+  color: var(--ink);
+}
+
+html[data-theme='dark'] .button-ghost,
+html[data-theme='dark'] .button-outline-light {
+  border-color: var(--line);
+}
+
+html[data-theme='dark'] .contact-form input,
+html[data-theme='dark'] .contact-form select,
+html[data-theme='dark'] .contact-form textarea {
+  border-color: var(--line);
+  background: var(--field);
+  color: var(--ink);
+}
+
+html[data-theme='dark'] .about-hero {
+  background-image: linear-gradient(90deg, rgb(17 24 22 / 96%) 30%, rgb(17 24 22 / 58%)), url('/accessories/seat-cover.png');
+}
+
+html[data-theme='dark'] .contact-hero {
+  background-image: linear-gradient(90deg, rgb(17 24 22 / 96%) 30%, rgb(17 24 22 / 54%)), url('/accessories/stereo.jpg');
+}
+
+@media (max-width: 800px) {
+  .main-nav.open {
+    background: var(--surface);
+  }
+
+  .main-nav .theme-toggle {
+    align-self: flex-start;
+    margin: 15px 0 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-call,
+  .theme-toggle {
+    transition: none;
+  }
+}
