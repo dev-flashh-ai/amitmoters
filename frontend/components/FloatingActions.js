@@ -1,5 +1,6 @@
-import { whatsappLink } from '../lib/siteData';
+import WhatsAppLink from './WhatsAppLink';
+import { T } from './LanguageProvider';
 
 export default function FloatingActions() {
-  return <a className="whatsapp-float" href={whatsappLink()} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><span>◔</span><b>WhatsApp</b></a>;
+  return <WhatsAppLink className="whatsapp-float" ariaLabel="Chat on WhatsApp"><span>◔</span><b><T>WhatsApp</T></b></WhatsAppLink>;
 }

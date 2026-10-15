@@ -3,6 +3,7 @@ import './theme.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingActions from '../components/FloatingActions';
+import { LanguageProvider } from '../components/LanguageProvider';
 
 export const metadata = {
   title: 'Amit Motor Car Accessories | Bhavnagar',
@@ -14,10 +15,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <FloatingActions />
+        <LanguageProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <FloatingActions />
+        </LanguageProvider>
       </body>
     </html>
   );
