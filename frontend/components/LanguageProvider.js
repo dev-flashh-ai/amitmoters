@@ -97,6 +97,8 @@ const gujarati = {
   'One workshop. Generations of confidence.': 'એક વર્કશોપ. પેઢીઓનો વિશ્વાસ.',
   'What began with a love for automobiles has grown into a trusted destination for car accessories, installations and custom styling in Bhavnagar.': 'ઓટોમોબાઇલ પ્રત્યેના પ્રેમથી શરૂ થયેલું કામ આજે ભાવનગરમાં કાર એસેસરીઝ, ઇન્સ્ટોલેશન અને કસ્ટમ સ્ટાઇલિંગ માટેનું વિશ્વાસપાત્ર સ્થળ બન્યું છે.',
   'Owner': 'માલિક',
+  'Owner photo will be added soon': 'માલિકનો ફોટો ટૂંક સમયમાં ઉમેરવામાં આવશે',
+  'Good work starts by listening. Every recommendation is practical, every installation is carefully finished, and every customer leaves knowing their vehicle is in capable hands.': 'સારું કામ ધ્યાનથી સાંભળવાથી શરૂ થાય છે. દરેક ભલામણ વ્યવહારુ હોય છે, દરેક ઇન્સ્ટોલેશન કાળજીપૂર્વક પૂર્ણ થાય છે અને દરેક ગ્રાહક વિશ્વાસ સાથે પરત જાય છે.',
   'believes good work starts by listening. Every recommendation is practical, every installation is carefully finished, and every customer leaves knowing their vehicle is in capable hands.': 'માને છે કે સારું કામ સાંભળવાથી શરૂ થાય છે. દરેક સલાહ ઉપયોગી અને દરેક ઇન્સ્ટોલેશન કાળજીપૂર્વક થાય છે.',
   'Quality-first work': 'ગુણવત્તાને પ્રથમ સ્થાન',
   'Honest guidance': 'પ્રામાણિક સલાહ',
