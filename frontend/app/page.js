@@ -2,10 +2,12 @@ import Link from 'next/link';
 import { gallery, reviews, services } from '../lib/siteData';
 import ServiceCard from '../components/ServiceCard';
 import CtaSection from '../components/CtaSection';
+import HomeBannerSlider from '../components/HomeBannerSlider';
 import { T } from '../components/LanguageProvider';
 
 export default function Home() {
   return <>
+    <HomeBannerSlider />
     <section className="hero"><div className="hero-bg" /><div className="container hero-content"><p className="eyebrow light"><T>Bhavnagar · Serving all Gujarat</T></p><h1><T>Make every drive</T><br /><em><T>feel extraordinary.</T></em></h1><p className="hero-copy"><T>Premium car accessories, thoughtful styling and trusted craftsmanship — perfected over 40+ years.</T></p><div className="hero-actions"><Link className="button button-orange" href="/services"><T>Explore Our Services</T> <span>↗</span></Link><Link className="button button-ghost" href="/contact"><T>View Our Work</T></Link></div><div className="hero-proof"><span><strong>40+</strong> <T>Years of experience</T></span><span><strong>1000s</strong> <T>Happy customers</T></span><span><strong>24/7</strong> <T>Enquiry availability</T></span></div></div><div className="hero-scroll"><T>Scroll to explore</T> <span>↓</span></div></section>
     <section className="intro-section"><div className="container split-intro"><div><p className="eyebrow"><T>The Amit Motor difference</T></p><h2><T>Details that make your car</T> <em><T>feel like yours.</T></em></h2></div><div className="intro-text"><p><T>From a crisp new cabin to a complete style transformation, we bring practical expertise and a premium eye to every installation.</T></p><Link className="text-link" href="/about"><T>Discover our story</T> <span>↗</span></Link></div></div></section>
     <section className="services-preview section-pad"><div className="container"><div className="section-heading"><div><p className="eyebrow"><T>What we do</T></p><h2><T>Upgrade your everyday.</T></h2></div><Link className="text-link" href="/services"><T>See all services</T> <span>↗</span></Link></div><div className="service-grid">{services.slice(0, 3).map((service, i) => <ServiceCard service={service} index={i} key={service.title} />)}</div></div></section>
