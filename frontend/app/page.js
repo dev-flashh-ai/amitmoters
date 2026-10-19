@@ -26,15 +26,16 @@ export default function Home() {
         </div>
 
         <div className="feature-hero__visual" aria-label="Featured accessories">
-          <div className="feature-hero__logo">AutoFurnish</div>
-          <div className="feature-card seat-card">
-            <img src="/accessories/seat-cover.png" alt="Custom seat cover" />
-          </div>
-          <div className="feature-card wheel-card">
-            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=900&q=80" alt="Steering wheel cover" />
-          </div>
-          <div className="feature-card mat-card">
-            <img src="/accessories/fitted-mats.jpg" alt="Premium car mats" />
+          <div className="hero-product-track">
+            <div className="hero-slide hero-slide--seat">
+              <img src="/accessories/seat-cover.png" alt="Custom seat cover" />
+            </div>
+            <div className="hero-slide hero-slide--wheel">
+              <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=900&q=80" alt="Steering wheel cover" />
+            </div>
+            <div className="hero-slide hero-slide--mat">
+              <img src="/accessories/fitted-mats.jpg" alt="Premium car mats" />
+            </div>
           </div>
         </div>
       </div>
