@@ -6,39 +6,7 @@ import { T } from '../components/LanguageProvider';
 
 export default function Home() {
   return <>
-    <section className="feature-hero">
-      <div className="container feature-hero__inner">
-        <div className="feature-hero__content">
-          <p className="eyebrow feature-hero__eyebrow"><T>Customize</T></p>
-          <h1>
-            <T>Your seat covers</T>
-            <span className="feature-hero__line"><T>with your name</T></span>
-          </h1>
-          <div className="feature-hero__offer">
-            <span><T>Get a</T></span>
-            <strong><T>FREE</T></strong>
-            <span><T>steering wheel cover!</T></span>
-          </div>
-          <div className="hero-actions">
-            <Link className="button button-orange" href="/services"><T>Shop now</T> <span>↗</span></Link>
-          </div>
-          <div className="feature-hero__tagline"><T>Your Car. Your Style. Your Identity.</T></div>
-        </div>
-
-        <div className="feature-hero__visual" aria-label="Featured accessories">
-          <div className="feature-hero__logo">AutoFurnish</div>
-          <div className="feature-card seat-card">
-            <img src="/accessories/seat-cover.png" alt="Custom seat cover" />
-          </div>
-          <div className="feature-card wheel-card">
-            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=900&q=80" alt="Steering wheel cover" />
-          </div>
-          <div className="feature-card mat-card">
-            <img src="/accessories/fitted-mats.jpg" alt="Premium car mats" />
-          </div>
-        </div>
-      </div>
-    </section>
+    <section className="hero"><div className="hero-bg" /><div className="container hero-content"><p className="eyebrow light"><T>Bhavnagar · Serving all Gujarat</T></p><h1><T>Make every drive</T><br /><em><T>feel extraordinary.</T></em></h1><p className="hero-copy"><T>Premium car accessories, thoughtful styling and trusted craftsmanship — perfected over 40+ years.</T></p><div className="hero-actions"><Link className="button button-orange" href="/services"><T>Explore Our Services</T> <span>↗</span></Link><Link className="button button-ghost" href="/contact"><T>View Our Work</T></Link></div><div className="hero-proof"><span><strong>40+</strong> <T>Years of experience</T></span><span><strong>1000s</strong> <T>Happy customers</T></span><span><strong>24/7</strong> <T>Enquiry availability</T></span></div></div><div className="hero-scroll"><T>Scroll to explore</T> <span>↓</span></div></section>
     <section className="intro-section"><div className="container split-intro"><div><p className="eyebrow"><T>The Amit Motor difference</T></p><h2><T>Details that make your car</T> <em><T>feel like yours.</T></em></h2></div><div className="intro-text"><p><T>From a crisp new cabin to a complete style transformation, we bring practical expertise and a premium eye to every installation.</T></p><Link className="text-link" href="/about"><T>Discover our story</T> <span>↗</span></Link></div></div></section>
     <section className="services-preview section-pad"><div className="container"><div className="section-heading"><div><p className="eyebrow"><T>What we do</T></p><h2><T>Upgrade your everyday.</T></h2></div><Link className="text-link" href="/services"><T>See all services</T> <span>↗</span></Link></div><div className="service-grid">{services.slice(0, 3).map((service, i) => <ServiceCard service={service} index={i} key={service.title} />)}</div></div></section>
     <section className="experience-band"><div className="container experience-grid"><div className="big-number">40<span>+</span></div><div><p className="eyebrow light"><T>Crafted with experience</T></p><h2><T>Four decades of doing it right.</T></h2><p><T>Experience is not just a number. It is knowing the right fit, the right finish and the right advice for every customer.</T></p></div><Link className="round-arrow" href="/about">↗</Link></div></section>
