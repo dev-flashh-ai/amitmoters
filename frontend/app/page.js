@@ -14,7 +14,7 @@ export default function Home() {
       <div className="container seat-cover-offer-inner">
         <div>
           <p className="eyebrow light"><T>Special offer</T></p>
-          <h2><T>Customise your seat covers with your name</T></h2>
+          <h2><T>Customise your seat covers</T></h2>
           <p><T>Get a FREE steering wheel cover with your customised seat covers.</T></p>
         </div>
         <WhatsAppLink className="button button-light" product="Custom Seat Covers"><T>Ask about this offer</T> <span>↗</span></WhatsAppLink>

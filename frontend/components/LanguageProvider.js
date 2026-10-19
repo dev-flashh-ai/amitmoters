@@ -24,7 +24,7 @@ const gujarati = {
   'Explore Our Services': 'અમારી સેવાઓ જુઓ',
   'View Our Work': 'અમારું કામ જુઓ',
   'Special offer': 'ખાસ ઑફર',
-  'Customise your seat covers with your name': 'તમારા નામ સાથે સીટ કવર કસ્ટમાઇઝ કરાવો',
+  'Customise your seat covers': 'તમારા સીટ કવર કસ્ટમાઇઝ કરાવો',
   'Get a FREE steering wheel cover with your customised seat covers.': 'કસ્ટમાઇઝ્ડ સીટ કવર સાથે સ્ટિયરિંગ વ્હીલ કવર મફત મેળવો.',
   'Ask about this offer': 'આ ઑફર વિશે પૂછો',
   'Years of experience': 'વર્ષોનો અનુભવ',
