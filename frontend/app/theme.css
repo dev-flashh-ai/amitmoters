@@ -563,6 +563,15 @@ html[data-theme='dark'] .contact-form {
   background-color: var(--cream);
 }
 
+html[data-theme='dark'] .seat-cover-offer {
+  background: var(--surface-raised);
+  color: var(--ink);
+}
+
+html[data-theme='dark'] .seat-cover-offer p:not(.eyebrow) {
+  color: var(--muted);
+}
+
 html[data-theme='dark'] .hero-copy,
 html[data-theme='dark'] .hero-proof,
 html[data-theme='dark'] .hero-scroll,
