@@ -7,8 +7,21 @@ export const business = {
   serviceArea: 'All Gujarat',
 };
 
+const seatCoverImages = [
+  'https://www.autofurnish.com/cdn/shop/files/4_feeee7d8-11fe-4602-a685-63bdbc08da06.jpg?v=1776925665&width=713',
+  'https://www.autofurnish.com/cdn/shop/files/5_6776b7a6-e655-4c70-b604-6a800944c94a.jpg?v=1776925664',
+  'https://www.autofurnish.com/cdn/shop/files/6_47481605-7b30-4289-931e-8eb7b836e5f9.jpg?v=1776925663&width=713',
+  'https://www.autofurnish.com/cdn/shop/files/3_cccdb992-d3be-4e63-b02b-cc1aaa782fd3.jpg?v=1776925663',
+];
+
 export const services = [
-  { title: 'Custom Seat Covers', description: 'Comfortable, tailored finishes in styles that suit your cabin.', image: '/accessories/seat-cover.png', imageCredit: 'Amaijani12 · CC BY-SA 4.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Car-seat-cover.png', tag: 'Interior' },
+  {
+    title: 'Custom Seat Covers',
+    description: 'Comfortable, tailored finishes in styles that suit your cabin.',
+    image: seatCoverImages[0],
+    images: seatCoverImages,
+    tag: 'Interior',
+  },
   { title: '7D EVA Floor Mats', description: 'A precise-fit layer that helps keep every footwell protected.', image: '/accessories/eva-mats.jpg', imageCredit: 'EVACARMAT · CC BY-SA 4.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Eva_Car_Mats.jpg', tag: 'Protection' },
   { title: 'Android Music Systems', description: 'Bring clearer sound and easy everyday connectivity to your drive.', image: '/accessories/stereo.jpg', imageCredit: 'Sobinsiril · CC0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:1din_car_headunit.jpg', tag: 'Audio' },
   { title: 'Tailored Carpet Mats', description: 'A clean, comfortable fit made for your vehicle’s floor space.', image: '/accessories/fitted-mats.jpg', imageCredit: 'Keystones · CC BY-SA 3.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Car_mats_fitted.jpg', tag: 'Protection' },
@@ -19,7 +32,7 @@ export const services = [
 ];
 
 export const gallery = [
-  { title: 'Custom seat covers', image: '/accessories/seat-cover.png', imageCredit: 'Amaijani12 · CC BY-SA 4.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Car-seat-cover.png' },
+  { title: 'Custom seat covers', image: seatCoverImages[0] },
   { title: '7D EVA floor mats', image: '/accessories/eva-mats.jpg', imageCredit: 'EVACARMAT · CC BY-SA 4.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Eva_Car_Mats.jpg' },
   { title: 'Music system upgrades', image: '/accessories/stereo.jpg', imageCredit: 'Sobinsiril · CC0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:1din_car_headunit.jpg' },
   { title: 'Tailored carpet mats', image: '/accessories/fitted-mats.jpg', imageCredit: 'Keystones · CC BY-SA 3.0', imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Car_mats_fitted.jpg' },

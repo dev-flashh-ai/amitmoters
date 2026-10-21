@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { T, useLanguage } from './LanguageProvider';
+import BrandMark from './BrandMark';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container nav-wrap">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
-          <span className="brand-badge">AM</span>
+          <BrandMark />
           <span><strong>AMIT MOTOR</strong><small>CAR ACCESSORIES</small></span>
         </Link>
         <button className="menu-toggle" aria-label={t('Toggle navigation')} aria-expanded={open} onClick={() => setOpen(!open)}><span /><span /><span /></button>

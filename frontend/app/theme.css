@@ -319,6 +319,126 @@ html[lang='gu'] body {
   stroke-width: 1.7;
 }
 
+.service-image-product {
+  background: var(--surface-raised);
+}
+
+.service-image-open {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.service-image-open img {
+  height: 100%;
+}
+
+.service-image-open .service-image-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.service-image-product:hover .service-image-hover,
+.service-image-open:focus-visible .service-image-hover {
+  opacity: 1;
+}
+
+.service-image-open:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: -3px;
+}
+
+.product-gallery-backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(7 12 18 / 78%);
+}
+
+.product-gallery {
+  width: min(820px, 100%);
+  max-height: min(90vh, 900px);
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.product-gallery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.product-gallery-header h2 {
+  margin: 0;
+  font: 700 20px Manrope, sans-serif;
+}
+
+.product-gallery-close {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface-raised);
+  color: var(--ink);
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.product-gallery-main {
+  width: 100%;
+  max-height: 58vh;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  background: var(--surface-raised);
+  object-fit: contain;
+}
+
+.product-gallery-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.product-gallery-thumbnails button {
+  overflow: hidden;
+  padding: 3px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: var(--surface-raised);
+  cursor: pointer;
+}
+
+.product-gallery-thumbnails button.selected {
+  border-color: var(--orange);
+}
+
+.product-gallery-thumbnails img {
+  height: 96px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
 .gallery-item {
   margin: 0;
 }
@@ -359,6 +479,64 @@ html[lang='gu'] body {
   max-width: calc(100% - 18px);
   padding: 4px 6px;
   background: rgb(11 23 53 / 72%);
+}
+
+.floating-actions {
+  position: fixed;
+  z-index: 30;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.floating-actions .whatsapp-float,
+.call-float {
+  position: static;
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 17px;
+  border-radius: 30px;
+  color: #fff;
+  box-shadow: 0 5px 18px #1930522e;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.floating-actions .whatsapp-float {
+  background: #1eac59;
+}
+
+.call-float {
+  background: var(--orange);
+}
+
+.floating-actions .whatsapp-float:hover,
+.call-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px #19305240;
+}
+
+.floating-actions svg {
+  width: 21px;
+  height: 21px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.floating-actions a:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
 }
 
 html[data-theme='dark'] body,
@@ -449,6 +627,24 @@ html[data-theme='dark'] .contact-form textarea {
   .brand-badge {
     width: 38px;
     height: 38px;
+  }
+}
+
+@media (max-width: 450px) {
+  .floating-actions {
+    right: 14px;
+    bottom: 15px;
+  }
+
+  .floating-actions .whatsapp-float,
+  .call-float {
+    width: 48px;
+    min-height: 48px;
+    padding: 0;
+  }
+
+  .call-float b {
+    display: none;
   }
 }
 
