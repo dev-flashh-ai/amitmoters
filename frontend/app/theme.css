@@ -323,6 +323,10 @@ html[lang='gu'] body {
   background: var(--surface-raised);
 }
 
+.product-category-heading {
+  margin-top: 88px;
+}
+
 .service-image-open {
   position: relative;
   display: block;
