@@ -560,7 +560,7 @@ body.services-page-with-back-to-top .floating-actions {
 .back-to-top {
   position: fixed;
   z-index: 29;
-  right: 24px;
+  right: clamp(180px, 16vw, 220px);
   bottom: 24px;
   display: flex;
   min-height: 46px;
@@ -733,6 +733,12 @@ html[data-theme='dark'] .contact-form textarea {
 
   .call-float b {
     display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .back-to-top {
+    right: 14px;
   }
 }
 
