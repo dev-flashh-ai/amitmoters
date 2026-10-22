@@ -495,6 +495,10 @@ html[lang='gu'] body {
   gap: 10px;
 }
 
+body.services-page-with-back-to-top .floating-actions {
+  bottom: 80px;
+}
+
 .floating-actions .whatsapp-float,
 .call-float {
   position: static;
@@ -557,7 +561,7 @@ html[lang='gu'] body {
   position: fixed;
   z-index: 29;
   right: 24px;
-  bottom: 150px;
+  bottom: 24px;
   display: flex;
   min-height: 46px;
   align-items: center;
@@ -571,7 +575,18 @@ html[lang='gu'] body {
   cursor: pointer;
   font-size: 12px;
   font-weight: 700;
-  transition: transform .2s, box-shadow .2s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity .2s, visibility .2s, transform .2s, box-shadow .2s;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .back-to-top:hover {
@@ -702,7 +717,11 @@ html[data-theme='dark'] .contact-form textarea {
 
   .back-to-top {
     right: 14px;
-    bottom: 128px;
+    bottom: 15px;
+  }
+
+  body.services-page-with-back-to-top .floating-actions {
+    bottom: 71px;
   }
 
   .floating-actions .whatsapp-float,
