@@ -19,6 +19,8 @@ const gujarati = {
   'Chat on WhatsApp': 'WhatsApp પર વાત કરો',
   WhatsApp: 'WhatsApp',
   'Bhavnagar · Serving all Gujarat': 'ભાવનગર · સમગ્ર ગુજરાતમાં સેવા',
+  'Interior styling': 'ઇન્ટિરિયર સ્ટાઇલિંગ',
+  'A better feel, every drive.': 'દરેક મુસાફરીમાં વધુ આરામ.',
   'Make every drive': 'દરેક મુસાફરીને',
   'feel extraordinary.': 'ખાસ બનાવો.',
   'Premium car accessories, thoughtful styling and trusted craftsmanship — perfected over 40+ years.': '૪૦થી વધુ વર્ષના અનુભવ સાથે પ્રીમિયમ કાર એસેસરીઝ, સુંદર સ્ટાઇલિંગ અને વિશ્વાસપાત્ર કારીગરી.',

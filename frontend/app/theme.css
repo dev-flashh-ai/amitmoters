@@ -96,6 +96,77 @@ html[lang='gu'] body {
   background-image: none;
 }
 
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(300px, .8fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.hero-content {
+  width: auto;
+  min-width: 0;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 4.4vw, 4.8rem);
+}
+
+.hero-proof {
+  gap: clamp(16px, 3vw, 40px);
+  margin-top: 58px;
+}
+
+.hero-showcase {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  height: clamp(340px, 36vw, 460px);
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  box-shadow: 0 24px 60px rgb(11 23 53 / 14%);
+}
+
+.hero-showcase::after {
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(transparent, rgb(7 12 18 / 78%));
+  content: '';
+}
+
+.hero-showcase img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-showcase figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 24px;
+  bottom: 22px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #fff;
+}
+
+.hero-showcase figcaption span {
+  color: #ffd2bf;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.hero-showcase figcaption strong {
+  font: 700 clamp(18px, 2vw, 25px)/1.2 Manrope, sans-serif;
+}
+
 .home-slider {
   margin-top: 24px;
   overflow: hidden;
@@ -680,6 +751,23 @@ html[data-theme='dark'] .contact-form textarea {
 }
 
 @media (max-width: 800px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 9vw, 4.2rem);
+  }
+
+  .hero-showcase {
+    height: min(56vw, 340px);
+  }
+
+  .hero-proof {
+    margin-top: 48px;
+  }
+
   .home-slider {
     margin-top: 16px;
   }
@@ -710,6 +798,10 @@ html[data-theme='dark'] .contact-form textarea {
 }
 
 @media (max-width: 450px) {
+  .hero-showcase {
+    height: 240px;
+  }
+
   .floating-actions {
     right: 14px;
     bottom: 15px;
