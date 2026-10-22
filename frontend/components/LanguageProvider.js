@@ -13,6 +13,7 @@ const gujarati = {
   'Call Now': 'હમણાં કૉલ કરો',
   'Switch to light mode': 'લાઇટ મોડ ચાલુ કરો',
   'Switch to dark mode': 'ડાર્ક મોડ ચાલુ કરો',
+  'Back to top': 'ઉપર જાઓ',
   'Choose language': 'ભાષા પસંદ કરો',
   'Toggle navigation': 'મેનુ ખોલો અથવા બંધ કરો',
   'Chat on WhatsApp': 'WhatsApp પર વાત કરો',
@@ -47,13 +48,12 @@ const gujarati = {
   'Start your upgrade': 'તમારું અપગ્રેડ શરૂ કરો',
   'Custom seat covers': 'કસ્ટમ સીટ કવર',
   '7D EVA floor mats': '7D EVA ફ્લોર મેટ્સ',
-  'Music system upgrades': 'મ્યુઝિક સિસ્ટમ અપગ્રેડ',
   'Tailored carpet mats': 'કસ્ટમ કાર્પેટ મેટ્સ',
   'Customer love': 'ગ્રાહકોનો વિશ્વાસ',
   'Trust, in their words.': 'તેમના શબ્દોમાં વિશ્વાસ.',
   'Sample reviews · Replace with verified reviews': 'નમૂનાના અભિપ્રાયો · ચકાસેલા અભિપ્રાયોથી બદલો',
   'The finishing is excellent and the guidance was honest from start to finish. My car feels completely new.': 'ફિનિશિંગ ઉત્તમ છે અને શરૂઆતથી અંત સુધી સાચી સલાહ મળી. મારી કાર હવે એકદમ નવી લાગે છે.',
-  'Amitbhai understands quality. The seat covers and music system installation were neat, quick and premium.': 'અમિતભાઈ ગુણવત્તા સમજે છે. સીટ કવર અને મ્યુઝિક સિસ્ટમનું કામ સરસ, ઝડપી અને પ્રીમિયમ હતું.',
+  'Amitbhai understands quality. The seat covers were neat, quick and premium.': 'અમિતભાઈ ગુણવત્તા સમજે છે. સીટ કવરનું કામ સરસ, ઝડપી અને પ્રીમિયમ હતું.',
   'Trusted work, fair advice and great attention to detail. I recommend Amit Motor to every car owner.': 'વિશ્વાસપાત્ર કામ, યોગ્ય સલાહ અને દરેક વિગતો પર ધ્યાન. હું દરેક કારમાલિકને અમિત મોટરની ભલામણ કરું છું.',
   'Happy customer': 'સંતુષ્ટ ગ્રાહક',
   'Your car, your signature': 'તમારી કાર, તમારી ઓળખ',
@@ -82,22 +82,16 @@ const gujarati = {
   'Browse all foot mats': 'બધા ફૂટ મેટ્સ જુઓ',
   '7D EVA Floor Mats': '7D EVA ફ્લોર મેટ્સ',
   'A precise-fit layer that helps keep every footwell protected.': 'ચોક્કસ ફિટિંગવાળા મેટ્સ, જે કારના ફ્લોરને સુરક્ષિત રાખે છે.',
-  'Android Music Systems': 'એન્ડ્રોઇડ મ્યુઝિક સિસ્ટમ',
-  'Bring clearer sound and easy everyday connectivity to your drive.': 'વધુ સારો અવાજ અને સરળ કનેક્ટિવિટી સાથે મુસાફરીનો આનંદ લો.',
   'Tailored Carpet Mats': 'કસ્ટમ કાર્પેટ મેટ્સ',
   'A clean, comfortable fit made for your vehicle’s floor space.': 'તમારી કારના ફ્લોર માટે સ્વચ્છ અને આરામદાયક મેટ્સ.',
   'Cabin Styling': 'કેબિન સ્ટાઇલિંગ',
   'Thoughtful interior details for a cabin that feels like your own.': 'તમારી પસંદગી મુજબ કેબિનને સુંદર બનાવતી વિગતો.',
-  'Dashboard & Audio Upgrades': 'ડેશબોર્ડ અને ઑડિયો અપગ્રેડ',
-  'Modern controls and a more enjoyable in-car listening experience.': 'આધુનિક કંટ્રોલ અને કારમાં વધુ સારો ઑડિયો અનુભવ.',
   'Comfort Accessories': 'આરામદાયક એસેસરીઝ',
   'Practical finishing touches for daily commutes and longer journeys.': 'રોજની અને લાંબી મુસાફરી માટે ઉપયોગી એસેસરીઝ.',
   'Bus & Traveller Accessories': 'બસ અને ટ્રાવેલર એસેસરીઝ',
   'Comfort-focused upgrades for commercial and family travel.': 'કમર્શિયલ અને પરિવારની મુસાફરી માટે આરામદાયક અપગ્રેડ.',
   Interior: 'ઇન્ટિરિયર',
   Protection: 'સુરક્ષા',
-  Audio: 'ઑડિયો',
-  Technology: 'ટેકનોલોજી',
   Comfort: 'આરામ',
   Commercial: 'કમર્શિયલ',
   'Enquire on WhatsApp': 'WhatsApp પર પૂછપરછ કરો',
@@ -148,8 +142,6 @@ const gujarati = {
   'Seat covers': 'સીટ કવર',
   '7D EVA floor mats': '7D EVA ફ્લોર મેટ્સ',
   'Car carpet mats': 'કાર્પેટ મેટ્સ',
-  'Android music systems': 'એન્ડ્રોઇડ મ્યુઝિક સિસ્ટમ',
-  'Dashboard and audio upgrades': 'ડેશબોર્ડ અને ઑડિયો અપગ્રેડ',
   'Cabin styling': 'કેબિન સ્ટાઇલિંગ',
   'Bus / Traveller accessories': 'બસ / ટ્રાવેલર એસેસરીઝ',
   'Your enquiry *': 'તમારી પૂછપરછ *',
@@ -186,7 +178,7 @@ export function LanguageProvider({ children }) {
     window.localStorage.setItem('amit-motor-language', nextLanguage);
   }
 
-  const translate = text => language === 'gu' ? gujarati[text] || text : text;
+  const translate = text => language === 'gu' && typeof text === 'string' ? gujarati[text] || gujarati[text.trim()] || text : text;
 
   return <LanguageContext.Provider value={{ language, setLanguage: changeLanguage, t: translate }}>{children}</LanguageContext.Provider>;
 }

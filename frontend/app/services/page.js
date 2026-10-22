@@ -3,9 +3,10 @@ import seatCoverProducts from '../../lib/seatCoverProducts.json';
 import footMatProducts from '../../lib/footMatProducts.json';
 import ServiceCard from '../../components/ServiceCard';
 import CtaSection from '../../components/CtaSection';
+import BackToTopButton from '../../components/BackToTopButton';
 import { T } from '../../components/LanguageProvider';
 
-export const metadata = { title: 'Car Accessories | Amit Motor Bhavnagar', description: 'Explore seat covers, car mats, music systems, interior styling and more at Amit Motor.' };
+export const metadata = { title: 'Car Accessories | Amit Motor Bhavnagar', description: 'Explore seat covers, car mats, interior styling and more at Amit Motor.' };
 
 export default function ServicesPage() { return <>
   <section className="page-hero"><div className="container"><p className="eyebrow light"><T>Our expertise</T></p><h1><T>Better details.</T><br /><em><T>Better drives.</T></em></h1><p><T>From subtle refinements to head-turning transformations, find the finishing touch your vehicle deserves.</T></p></div></section>
@@ -19,4 +20,5 @@ export default function ServicesPage() { return <>
   </section>
   <section className="section-pad services-page"><div className="container"><div className="section-heading"><div><p className="eyebrow"><T>More upgrades</T></p><h2><T>Explore our services</T></h2></div></div><div className="service-grid service-grid-large">{services.map((service, i) => <ServiceCard service={service} index={i} key={service.title} />)}</div></div></section>
   <CtaSection compact />
+  <BackToTopButton />
 </>; }

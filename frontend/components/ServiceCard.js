@@ -9,6 +9,7 @@ export default function ServiceCard({ service, index = 0 }) {
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
   const translatedTitle = t(service.title);
+  const translatedTag = t(typeof service.tag === 'string' ? service.tag.trim() : '');
   const images = service.images || [service.image];
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export default function ServiceCard({ service, index = 0 }) {
             <img className="service-image-hover" src={images[1]} alt="" loading="lazy" />
           </button>
           : <img src={service.image} alt={translatedTitle} loading="lazy" />}
-        <span className="service-tag">{t(service.tag)}</span>
+        <span className="service-tag">{translatedTag}</span>
         {service.imageCredit && <a className="image-credit" href={service.imageCreditUrl} target="_blank" rel="noreferrer">Photo: {service.imageCredit}</a>}
       </div>
       <div className="service-card-body"><h3>{translatedTitle}</h3><p>{t(service.description)}</p><WhatsAppLink className="text-link" product={service.title}>{t('Enquire on WhatsApp')} <span>↗</span></WhatsAppLink></div>
