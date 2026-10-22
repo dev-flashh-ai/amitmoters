@@ -247,7 +247,7 @@ html[lang='gu'] body {
 
 .contact-feature-image img {
   width: 100%;
-  aspect-ratio: 3.6 / 1;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
