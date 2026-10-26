@@ -1,8 +1,10 @@
 import WhatsAppLink from './WhatsAppLink';
 import { T } from './LanguageProvider';
+import WebsiteChatbot from './WebsiteChatbot';
 
 export default function FloatingActions() {
   return <div className="floating-actions">
+    <WebsiteChatbot />
     <WhatsAppLink className="whatsapp-float" ariaLabel="Chat on WhatsApp">
       <svg className="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L4 20l1.1-3.5a8.5 8.5 0 1 1 15.4-5Z" />

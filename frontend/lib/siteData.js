@@ -4,6 +4,7 @@ export const business = {
   phone: '9824994998',
   whatsapp: '919824994998',
   address: 'Panwadi, Bhavnagar, Gujarat – 364001',
+  locationUrl: 'https://maps.app.goo.gl/itveFmzDQb2BpSPy5',
   serviceArea: 'All Gujarat',
 };
 

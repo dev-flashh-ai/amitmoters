@@ -28,7 +28,7 @@ export default function ContactPage() {
             <div><span><T>Visit us</T></span><strong><T>{business.address}</T></strong></div>
             <div><span><T>Availability</T></span><strong><T>24/7 enquiries · All Gujarat</T></strong></div>
           </div>
-          <a className="map-link" href="https://www.google.com/maps/@21.7717924,72.1397263,43a,75y,308.64h,79.75t/data=!3m7!1e1!3m5!1se_xlIeiccAhMSN0sMLM8Ig!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D10.25%26panoid%3De_xlIeiccAhMSN0sMLM8Ig%26yaw%3D308.64!7i16384!8i8192!5m1!1e2?entry=ttu&amp;g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer"><T>Open location in Google Maps</T> ↗</a>
+          <a className="map-link" href={business.locationUrl} target="_blank" rel="noreferrer"><T>Open location in Google Maps</T> ↗</a>
         </div>
       </div>
     </section>
