@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { T, useLanguage } from './LanguageProvider';
 import BrandMark from './BrandMark';
+import { useWebsiteGuide } from './WebsiteGuide';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState('light');
   const { language, setLanguage, t } = useLanguage();
+  const { openGuide } = useWebsiteGuide();
   const links = [['Home', '/'], ['Services', '/services'], ['About Us', '/about'], ['Contact Us', '/contact']];
 
   useEffect(() => {
@@ -45,6 +47,10 @@ export default function Header() {
           <a className="nav-call" href="tel:9824994998"><T>Call Now</T> <span>↗</span></a>
         </nav>
       </div>
+      <button className="website-guide-launch" type="button" onClick={openGuide} aria-label={t('Open website guide')} title={t('Open website guide')}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M9.7 9a2.4 2.4 0 1 1 4.2 1.6c-.9 1-1.9 1.2-1.9 2.7M12 17h.01" /></svg>
+        <span><T>Website guide</T></span>
+      </button>
     </header>
   );
 }

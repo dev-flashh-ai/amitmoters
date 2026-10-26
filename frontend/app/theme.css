@@ -91,6 +91,193 @@ html[lang='gu'] body {
   outline-offset: 2px;
 }
 
+.website-guide-launch {
+  position: fixed;
+  z-index: 40;
+  bottom: 22px;
+  left: 22px;
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 5px 18px rgb(11 23 53 / 16%);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  transition: border-color .2s, color .2s, transform .2s;
+}
+
+.website-guide-launch:hover {
+  transform: translateY(-2px);
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.website-guide-launch svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.website-guide-launch:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.website-guide {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+}
+
+.website-guide-dimmer {
+  position: fixed;
+  z-index: 1000;
+  background: rgb(4 8 11 / 70%);
+}
+
+.website-guide-dimmer-top,
+.website-guide-dimmer-bottom {
+  right: 0;
+  left: 0;
+}
+
+.website-guide-dimmer-top {
+  top: 0;
+}
+
+.website-guide-dimmer-bottom {
+  bottom: 0;
+}
+
+.website-guide-dimmer-left {
+  bottom: 0;
+}
+
+.website-guide-dimmer-right {
+  right: 0;
+  bottom: 0;
+}
+
+.website-guide-dimmer-full {
+  inset: 0;
+}
+
+.website-guide-spotlight {
+  position: fixed;
+  z-index: 1001;
+  border: 2px solid var(--orange);
+  border-radius: 12px;
+  box-shadow: 0 0 0 4px rgb(241 90 36 / 22%);
+  pointer-events: auto;
+}
+
+.website-guide-card {
+  position: fixed;
+  z-index: 1002;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  left: max(20px, env(safe-area-inset-left));
+  width: min(480px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 23px 25px 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 20px 70px rgb(0 0 0 / 38%);
+}
+
+.website-guide-card-top {
+  top: max(20px, env(safe-area-inset-top));
+  bottom: auto;
+}
+
+.website-guide-card-topline,
+.website-guide-actions,
+.website-guide-actions > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.website-guide-card-topline {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.website-guide-card-topline span:first-child {
+  color: var(--orange);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.website-guide-card h2 {
+  margin: 13px 0 8px;
+  font: 700 clamp(20px, 3vw, 25px)/1.2 Manrope, sans-serif;
+  letter-spacing: -.035em;
+}
+
+.website-guide-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.website-guide-actions {
+  margin-top: 20px;
+}
+
+.website-guide-actions > div {
+  justify-content: flex-end;
+}
+
+.website-guide-actions button {
+  min-height: 40px;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.website-guide-actions button:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.website-guide-actions .website-guide-next {
+  border-color: var(--orange);
+  background: var(--orange);
+  color: #fff;
+}
+
+.website-guide-actions .website-guide-next:hover {
+  background: var(--orange-dark);
+  color: #fff;
+}
+
+.website-guide-actions button:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
 .about-hero,
 .contact-hero {
   background-image: none;

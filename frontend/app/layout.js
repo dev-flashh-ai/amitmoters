@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingActions from '../components/FloatingActions';
 import { LanguageProvider } from '../components/LanguageProvider';
+import { WebsiteGuideProvider } from '../components/WebsiteGuide';
 
 export const metadata = {
   title: 'Amit Motor Car Accessories | Bhavnagar',
@@ -16,10 +17,12 @@ export default function RootLayout({ children }) {
     <html lang="gu">
       <body>
         <LanguageProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <FloatingActions />
+          <WebsiteGuideProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <FloatingActions />
+          </WebsiteGuideProvider>
         </LanguageProvider>
       </body>
     </html>
