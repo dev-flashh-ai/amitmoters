@@ -12,7 +12,7 @@ const banners = [
 export default function HomeBannerSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (isPaused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
@@ -63,10 +63,6 @@ export default function HomeBannerSlider() {
           ))}
         </div>
         <button type="button" aria-label={t('Next banner')} onClick={() => showBanner(activeIndex + 1)}>›</button>
-        <div className="language-toggle home-slider-language-toggle" role="group" aria-label={t('Choose language')}>
-          <button type="button" onClick={() => setLanguage('en')} aria-pressed={language === 'en'} lang="en">EN</button>
-          <button type="button" onClick={() => setLanguage('gu')} aria-pressed={language === 'gu'} lang="gu">ગુજરાતી</button>
-        </div>
       </div>
     </section>
   );
