@@ -100,7 +100,7 @@ export function useWebsiteGuide() {
 function WebsiteGuide({ isOpen, stepIndex, setStepIndex, pathname, router, onClose }) {
   const [targetRect, setTargetRect] = useState(null);
   const [viewport, setViewport] = useState({ width: 0, height: 0 });
-  const { t } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
   const step = guideSteps[stepIndex];
 
   useEffect(() => {
@@ -210,15 +210,21 @@ function WebsiteGuide({ isOpen, stepIndex, setStepIndex, pathname, router, onClo
       >
         <div className="website-guide-card-topline">
           <span>{t('Website guide')}</span>
-          <span>{stepIndex + 1} / {guideSteps.length}</span>
+          <div className="website-guide-topline-controls">
+            <div className="language-toggle website-guide-language-toggle" role="group" aria-label={t('Choose language')}>
+              <button type="button" onClick={() => setLanguage('en')} aria-pressed={language === 'en'} lang="en">EN</button>
+              <button type="button" onClick={() => setLanguage('gu')} aria-pressed={language === 'gu'} lang="gu">ગુજરાતી</button>
+            </div>
+            <span aria-label={`${t('Step')} ${stepIndex + 1} ${t('of')} ${guideSteps.length}`}>{stepIndex + 1} / {guideSteps.length}</span>
+          </div>
         </div>
         <h2 id="website-guide-title">{t(step.title)}</h2>
         <p id="website-guide-description">{t(step.description)}</p>
         <div className="website-guide-actions">
           <button className="website-guide-skip" type="button" onClick={onClose}>{t('Skip tour')}</button>
           <div>
-            {stepIndex > 0 && <button className="website-guide-back" type="button" onClick={goBack}>{t('Back')}</button>}
-            <button className="website-guide-next" type="button" onClick={advance}>{t(isLastStep ? 'Finish tour' : 'Next')}</button>
+            {stepIndex > 0 && <button className="website-guide-back" type="button" onClick={goBack} aria-label={t('Back')}><span aria-hidden="true">←</span> {t('Back')}</button>}
+            <button className="website-guide-next" type="button" onClick={advance} aria-label={t(isLastStep ? 'Finish tour' : 'Next')}>{t(isLastStep ? 'Finish tour' : 'Next')} {!isLastStep && <span aria-hidden="true">→</span>}</button>
           </div>
         </div>
       </section>

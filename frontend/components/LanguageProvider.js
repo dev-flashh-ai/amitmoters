@@ -87,6 +87,8 @@ const gujarati = {
   'Toggle navigation': 'મેનુ ખોલો અથવા બંધ કરો',
   'Website guide': 'વેબસાઇટ માર્ગદર્શિકા',
   'Open website guide': 'વેબસાઇટ માર્ગદર્શિકા ખોલો',
+  Step: 'પગલું',
+  of: 'માંથી',
   'Welcome to Amit Motor': 'અમિત મોટરમાં આપનું સ્વાગત છે',
   'This quick tour shows you where to find products, explore the site and contact us. Use Next to continue, or close the tour whenever you like.': 'આ ટૂંકી માર્ગદર્શિકા તમને પ્રોડક્ટ્સ શોધવા, વેબસાઇટ જોવા અને અમારો સંપર્ક કરવા માટે મદદ કરશે. આગળ વધવા માટે આગળ દબાવો અથવા ગમે ત્યારે માર્ગદર્શિકા બંધ કરો.',
   'Find your way around': 'વેબસાઇટમાં સરળતાથી ફરો',

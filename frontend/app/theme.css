@@ -218,10 +218,30 @@ html[lang='gu'] body {
   font-weight: 700;
 }
 
+.website-guide-topline-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.website-guide-language-toggle {
+  padding: 2px;
+}
+
+.website-guide-language-toggle button {
+  min-height: 27px;
+  padding: 4px 8px;
+  font-size: 10px;
+}
+
 .website-guide-card-topline span:first-child {
   color: var(--orange);
   letter-spacing: .08em;
   text-transform: uppercase;
+}
+
+.website-guide-topline-controls > span {
+  white-space: nowrap;
 }
 
 .website-guide-card h2 {
@@ -271,6 +291,12 @@ html[lang='gu'] body {
 .website-guide-actions .website-guide-next:hover {
   background: var(--orange-dark);
   color: #fff;
+}
+
+.website-guide-actions button span[aria-hidden='true'] {
+  font-size: 16px;
+  line-height: 0;
+  vertical-align: -1px;
 }
 
 .website-guide-actions button:focus-visible {
