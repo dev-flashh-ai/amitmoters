@@ -10,19 +10,31 @@ const banners = [
 
 export default function HomeBannerSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
+    if (isPaused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+
     const interval = window.setInterval(() => {
       setActiveIndex(index => (index + 1) % banners.length);
-    }, 2000);
+    }, 5000);
 
     return () => window.clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   const showBanner = index => setActiveIndex((index + banners.length) % banners.length);
 
   return (
-    <section className="home-slider" aria-label="Featured products">
+    <section
+      className="home-slider"
+      aria-label="Featured products"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={event => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setIsPaused(false);
+      }}
+    >
       <div className="home-slider-image-wrap">
         {banners.map((banner, index) => (
           <img
@@ -36,7 +48,7 @@ export default function HomeBannerSlider() {
       </div>
       <div className="home-slider-controls">
         <button type="button" aria-label="Previous banner" onClick={() => showBanner(activeIndex - 1)}>‹</button>
-        <div className="home-slider-dots" aria-label="Choose a banner">
+        <div className="home-slider-dots" role="group" aria-label="Choose a banner">
           {banners.map((banner, index) => (
             <button
               type="button"
