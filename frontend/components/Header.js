@@ -7,10 +7,9 @@ import BrandMark from './BrandMark';
 import { useWebsiteGuide } from './WebsiteGuide';
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState('light');
   const { language, setLanguage, t } = useLanguage();
-  const { openGuide } = useWebsiteGuide();
+  const { openGuide, navigationOpen, setNavigationOpen } = useWebsiteGuide();
   const links = [['Home', '/'], ['Services', '/services'], ['About Us', '/about'], ['Contact Us', '/contact']];
 
   useEffect(() => {
@@ -30,13 +29,13 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container nav-wrap">
-        <Link href="/" className="brand" onClick={() => setOpen(false)}>
+        <Link href="/" className="brand" onClick={() => setNavigationOpen(false)}>
           <BrandMark />
           <span><strong>AMIT MOTOR</strong><small>CAR ACCESSORIES</small></span>
         </Link>
-        <button className="menu-toggle" aria-label={t('Toggle navigation')} aria-expanded={open} onClick={() => setOpen(!open)}><span /><span /><span /></button>
-        <nav className={open ? 'main-nav open' : 'main-nav'}>
-          {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}><T>{label}</T></Link>)}
+        <button className="menu-toggle" aria-label={t('Toggle navigation')} aria-expanded={navigationOpen} onClick={() => setNavigationOpen(!navigationOpen)}><span /><span /><span /></button>
+        <nav className={navigationOpen ? 'main-nav open' : 'main-nav'}>
+          {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setNavigationOpen(false)}><T>{label}</T></Link>)}
           <div className="language-toggle" role="group" aria-label={t('Choose language')}>
             <button type="button" onClick={() => setLanguage('en')} aria-pressed={language === 'en'}>EN</button>
             <button type="button" onClick={() => setLanguage('gu')} aria-pressed={language === 'gu'} lang="gu">ગુજરાતી</button>

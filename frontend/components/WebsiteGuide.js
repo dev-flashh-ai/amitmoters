@@ -15,9 +15,52 @@ const guideSteps = [
   },
   {
     path: '/',
-    selector: '.site-header',
-    title: 'Find your way around',
-    description: 'Use Home, Services, About Us and Contact Us to explore the website. The language and theme controls let you switch between Gujarati and English or choose light and dark mode.',
+    selector: '.main-nav a[href="/"]',
+    navigationMenu: true,
+    title: 'Home navigation button',
+    description: 'Choose Home to return to the top of the homepage.',
+  },
+  {
+    path: '/',
+    selector: '.main-nav a[href="/services"]',
+    navigationMenu: true,
+    title: 'Services navigation button',
+    description: 'Choose Services to browse car accessories, products and their photo galleries.',
+  },
+  {
+    path: '/',
+    selector: '.main-nav a[href="/about"]',
+    navigationMenu: true,
+    title: 'About navigation button',
+    description: 'Choose About Us to learn about Amit Motor and its experience.',
+  },
+  {
+    path: '/',
+    selector: '.main-nav a[href="/contact"]',
+    navigationMenu: true,
+    title: 'Contact navigation button',
+    description: 'Choose Contact Us to find contact details and send an enquiry.',
+  },
+  {
+    path: '/',
+    selector: '.main-nav .language-toggle',
+    navigationMenu: true,
+    title: 'Language switch',
+    description: 'Choose EN for English or ગુજરાતી for Gujarati. Your choice is saved and used throughout the website.',
+  },
+  {
+    path: '/',
+    selector: '.main-nav .theme-toggle',
+    navigationMenu: true,
+    title: 'Display theme button',
+    description: 'Choose the sun or moon button to switch between light and dark display themes.',
+  },
+  {
+    path: '/',
+    selector: '.main-nav .nav-call',
+    navigationMenu: true,
+    title: 'Call button',
+    description: 'Choose Call Now to phone Amit Motor directly.',
   },
   {
     path: '/',
@@ -60,6 +103,7 @@ const guideSteps = [
 export function WebsiteGuideProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
+  const [navigationOpen, setNavigationOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -70,19 +114,22 @@ export function WebsiteGuideProvider({ children }) {
   const closeGuide = useCallback(() => {
     window.localStorage.setItem(completionKey, 'true');
     setIsOpen(false);
+    setNavigationOpen(false);
   }, []);
   const openGuide = useCallback(() => {
     setStepIndex(0);
+    setNavigationOpen(false);
     setIsOpen(true);
   }, []);
 
   return (
-    <WebsiteGuideContext.Provider value={{ openGuide }}>
+    <WebsiteGuideContext.Provider value={{ openGuide, navigationOpen, setNavigationOpen }}>
       {children}
       <WebsiteGuide
         isOpen={isOpen}
         stepIndex={stepIndex}
         setStepIndex={setStepIndex}
+        setNavigationOpen={setNavigationOpen}
         pathname={pathname}
         router={router}
         onClose={closeGuide}
@@ -97,13 +144,18 @@ export function useWebsiteGuide() {
   return context;
 }
 
-function WebsiteGuide({ isOpen, stepIndex, setStepIndex, pathname, router, onClose }) {
+function WebsiteGuide({ isOpen, stepIndex, setStepIndex, setNavigationOpen, pathname, router, onClose }) {
   const [targetRect, setTargetRect] = useState(null);
   const [cardRect, setCardRect] = useState(null);
   const [viewport, setViewport] = useState({ width: 0, height: 0 });
   const cardRef = useRef(null);
   const { language, setLanguage, t } = useLanguage();
   const step = guideSteps[stepIndex];
+
+  useEffect(() => {
+    const shouldExpandNavigation = isOpen && step.navigationMenu && window.matchMedia('(max-width: 800px)').matches;
+    setNavigationOpen(shouldExpandNavigation);
+  }, [isOpen, setNavigationOpen, step]);
 
   useEffect(() => {
     if (!isOpen) return;
