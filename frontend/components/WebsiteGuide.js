@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useCallback, useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useLanguage } from './LanguageProvider';
 
@@ -105,7 +105,7 @@ function WebsiteGuide({ isOpen, stepIndex, setStepIndex, pathname, router, onClo
   const { language, setLanguage, t } = useLanguage();
   const step = guideSteps[stepIndex];
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!isOpen) return;
 
     const cardBounds = cardRef.current?.getBoundingClientRect();
