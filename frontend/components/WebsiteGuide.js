@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useLanguage } from './LanguageProvider';
 
@@ -99,9 +99,25 @@ export function useWebsiteGuide() {
 
 function WebsiteGuide({ isOpen, stepIndex, setStepIndex, pathname, router, onClose }) {
   const [targetRect, setTargetRect] = useState(null);
+  const [cardRect, setCardRect] = useState(null);
   const [viewport, setViewport] = useState({ width: 0, height: 0 });
+  const cardRef = useRef(null);
   const { language, setLanguage, t } = useLanguage();
   const step = guideSteps[stepIndex];
+
+  useLayoutEffect(() => {
+    if (!isOpen) return;
+
+    const cardBounds = cardRef.current?.getBoundingClientRect();
+    setCardRect(cardBounds ? {
+      top: cardBounds.top,
+      left: cardBounds.left,
+      right: cardBounds.right,
+      bottom: cardBounds.bottom,
+      width: cardBounds.width,
+      height: cardBounds.height,
+    } : null);
+  }, [isOpen, language, stepIndex, targetRect]);
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -129,6 +145,15 @@ function WebsiteGuide({ isOpen, stepIndex, setStepIndex, pathname, router, onClo
 
     function updatePosition() {
       setViewport({ width: window.innerWidth, height: window.innerHeight });
+      const cardBounds = cardRef.current?.getBoundingClientRect();
+      setCardRect(cardBounds ? {
+        top: cardBounds.top,
+        left: cardBounds.left,
+        right: cardBounds.right,
+        bottom: cardBounds.bottom,
+        width: cardBounds.width,
+        height: cardBounds.height,
+      } : null);
       if (!element) {
         setTargetRect(null);
         return;
@@ -157,7 +182,7 @@ function WebsiteGuide({ isOpen, stepIndex, setStepIndex, pathname, router, onClo
       window.removeEventListener('scroll', updateOnScroll);
       window.removeEventListener('resize', updatePosition);
     };
-  }, [isOpen, pathname, router, step]);
+  }, [isOpen, language, pathname, router, step]);
 
   if (!isOpen) return null;
 
@@ -183,6 +208,7 @@ function WebsiteGuide({ isOpen, stepIndex, setStepIndex, pathname, router, onClo
       bottom: Math.max(0, viewport.height - targetRect.bottom - 8),
     }
     : null;
+  const arrowPath = targetRect && cardRect ? getGuideArrowPath(cardRect, targetRect) : null;
 
   return (
     <div className="website-guide" aria-live="polite">
@@ -201,7 +227,16 @@ function WebsiteGuide({ isOpen, stepIndex, setStepIndex, pathname, router, onClo
           }}
         />
       </> : <div className="website-guide-dimmer website-guide-dimmer-full" />}
+      {arrowPath && <svg className="website-guide-arrow" viewBox={`0 0 ${viewport.width} ${viewport.height}`} aria-hidden="true">
+        <defs>
+          <marker id="website-guide-arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+            <path d="M0 0 8 4 0 8" />
+          </marker>
+        </defs>
+        <path d={arrowPath} markerEnd="url(#website-guide-arrowhead)" />
+      </svg>}
       <section
+        ref={cardRef}
         className={`website-guide-card${targetRect && targetRect.top > viewport.height / 2 ? ' website-guide-card-top' : ''}`}
         role="dialog"
         aria-modal="true"
@@ -230,4 +265,33 @@ function WebsiteGuide({ isOpen, stepIndex, setStepIndex, pathname, router, onClo
       </section>
     </div>
   );
+}
+
+function getGuideArrowPath(card, target) {
+  const startX = card.left + card.width / 2;
+  const startY = card.top + card.height / 2;
+  const endX = target.left + target.width / 2;
+  const endY = target.top + target.height / 2;
+  const deltaX = endX - startX;
+  const deltaY = endY - startY;
+  const cardScale = Math.min(
+    Math.abs(deltaX) > 0 ? card.width / 2 / Math.abs(deltaX) : Infinity,
+    Math.abs(deltaY) > 0 ? card.height / 2 / Math.abs(deltaY) : Infinity,
+  );
+  const targetScale = Math.min(
+    Math.abs(deltaX) > 0 ? Math.max(target.width / 2, 12) / Math.abs(deltaX) : Infinity,
+    Math.abs(deltaY) > 0 ? Math.max(target.height / 2, 12) / Math.abs(deltaY) : Infinity,
+  );
+  const fromX = startX + deltaX * cardScale;
+  const fromY = startY + deltaY * cardScale;
+  const toX = endX - deltaX * targetScale;
+  const toY = endY - deltaY * targetScale;
+  const distanceY = toY - fromY;
+  const distanceX = toX - fromX;
+  const control1X = fromX + distanceX * 0.18;
+  const control1Y = fromY + distanceY * 0.55;
+  const control2X = toX - distanceX * 0.18;
+  const control2Y = toY - distanceY * 0.45;
+
+  return `M ${fromX} ${fromY} C ${control1X} ${control1Y}, ${control2X} ${control2Y}, ${toX} ${toY}`;
 }
