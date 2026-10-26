@@ -4,6 +4,71 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 const LanguageContext = createContext(null);
 
+const productTitleTranslations = [
+  [/\bUniversal Fit For All Cars Universal\b/gi, 'બધી કાર માટે યોગ્ય'],
+  [/\bWith Back Split Seats\b/gi, 'પાછળની સ્પ્લિટ સીટ સાથે'],
+  [/\bWith Back Seat Armrest\b/gi, 'પાછળની સીટના આર્મરેસ્ટ સાથે'],
+  [/\bBlack-Ice Grey\b/gi, 'બ્લેક-આઇસ ગ્રે'],
+  [/\bBlack-Coffee\b/gi, 'બ્લેક-કોફી'],
+  [/\bBlack-Beige\b/gi, 'બ્લેક-બેજ'],
+  [/\bBeige-Beige\b/gi, 'બેજ-બેજ'],
+  [/\bSignature Series\b/gi, 'સિગ્નેચર સિરીઝ'],
+  [/\bCar Seat Covers?\b/gi, 'કાર સીટ કવર'],
+  [/\bCar Foot Mats?\b/gi, 'કાર ફ્લોર મેટ્સ'],
+  [/\bCustom[- ]Fitted\b/gi, 'કસ્ટમ ફિટિંગવાળા'],
+  [/\bCustom[- ]Designed\b/gi, 'કસ્ટમ ડિઝાઇન કરેલા'],
+  [/\bAll Weather Proof\b/gi, 'તમામ ઋતુમાં ઉપયોગી'],
+  [/\bAll Weather Resistant\b/gi, 'તમામ ઋતુમાં ટકાઉ'],
+  [/\bAll Season\b/gi, 'દરેક ઋતુ માટે'],
+  [/\bSuperior Powerful Dirt Trapping Capacity\b/gi, 'ધૂળને સારી રીતે રોકવાની ક્ષમતા'],
+  [/\bUnique Diamond Fish Design\b/gi, 'અનોખી ડાયમંડ ફિશ ડિઝાઇન'],
+  [/\bDiamond Fish Design\b/gi, 'ડાયમંડ ફિશ ડિઝાઇન'],
+  [/\bElegant\s*&\s*Stylish\b/gi, 'ભવ્ય અને સ્ટાઇલિશ'],
+  [/\bExclusive Combination\b/gi, 'વિશિષ્ટ કોમ્બિનેશન'],
+  [/\b2-Layer Depth\b/gi, '૨ સ્તરની જાડાઈ'],
+  [/\bLuxury PU Leather\b/gi, 'લક્ઝરી PU લેધર'],
+  [/\bPU Leather\b/gi, 'PU લેધર'],
+  [/\bAnti[- ]Skid\b/gi, 'લપસતા અટકાવતું'],
+  [/\bWaterproof\b/gi, 'વોટરપ્રૂફ'],
+  [/\bOdorless\b/gi, 'ગંધરહિત'],
+  [/\bHeavy Duty\b/gi, 'હેવી ડ્યુટી'],
+  [/\bAll Cars\b/gi, 'બધી કાર'],
+  [/\bCar Mats?\b/gi, 'કાર ફ્લોર મેટ્સ'],
+  [/\bFloor Mats?\b/gi, 'ફ્લોર મેટ્સ'],
+  [/\bCarpet Mats?\b/gi, 'કાર્પેટ મેટ્સ'],
+  [/\bSeat Covers?\b/gi, 'સીટ કવર'],
+  [/\bFoot Mats?\b/gi, 'ફૂટ મેટ્સ'],
+  [/\bMats?\b/gi, 'મેટ્સ'],
+  [/\bUniversal Fit\b/gi, 'બધી કાર માટે યોગ્ય'],
+  [/\bUniversal\b/gi, 'યુનિવર્સલ'],
+  [/\bPremium\b/gi, 'પ્રીમિયમ'],
+  [/\bLuxurious\b/gi, 'લક્ઝરી'],
+  [/\bLuxury\b/gi, 'લક્ઝરી'],
+  [/\bExclusive\b/gi, 'વિશિષ્ટ'],
+  [/\bCombination\b/gi, 'કોમ્બિનેશન'],
+  [/\bElegant\b/gi, 'ભવ્ય'],
+  [/\bStylish\b/gi, 'સ્ટાઇલિશ'],
+  [/\bLeather\b/gi, 'લેધર'],
+  [/\bCustom\b/gi, 'કસ્ટમ'],
+  [/\bFitted\b/gi, 'ફિટેડ'],
+  [/\bComfort\b/gi, 'આરામ'],
+  [/\bProtection\b/gi, 'રક્ષણ'],
+  [/\bDesign\b/gi, 'ડિઝાઇન'],
+  [/\bAutomatic\b/gi, 'ઓટોમેટિક'],
+  [/\bManual\b/gi, 'મેન્યુઅલ'],
+  [/\bCurly\b/gi, 'કર્લી'],
+  [/\bSuperior\b/gi, 'ઉત્તમ'],
+  [/\bPowerful\b/gi, 'શક્તિશાળી'],
+  [/\bFor\b/gi, 'માટે'],
+  [/\bWith\b/gi, 'સાથે'],
+  [/\bAnd\b/gi, 'અને'],
+  [/\b2 Rows?\b/gi, '૨ રો'],
+  [/\b7 Seater\b/gi, '૭ સીટર'],
+  [/\bBlack\b/gi, 'બ્લેક'],
+  [/\bGrey\b/gi, 'ગ્રે'],
+  [/\bBeige\b/gi, 'બેજ'],
+];
+
 const gujarati = {
   Home: 'હોમ',
   Services: 'સેવાઓ',
@@ -75,6 +140,7 @@ const gujarati = {
   'Signature Series Seat Covers': 'સિગ્નેચર સિરીઝ સીટ કવર',
   'Browse model-specific styles and view every product image.': 'કારના મોડેલ પ્રમાણે સીટ કવર જુઓ અને દરેક પ્રોડક્ટના ફોટા નિહાળો.',
   'OEM-style, factory-fitted seat covers for this vehicle model.': 'આ કારના મોડેલ માટે OEM-સ્ટાઇલના ફેક્ટરી-ફિટેડ સીટ કવર.',
+  'Vehicle-fit floor mats for comfort and cabin protection.': 'આરામ અને કેબિનના રક્ષણ માટે કારના મોડેલ પ્રમાણેના ફ્લોર મેટ્સ.',
   'Explore our services': 'અમારી સેવાઓ જુઓ',
   'More upgrades': 'વધુ અપગ્રેડ',
   'Browse all seat covers': 'બધા સીટ કવર જુઓ',
@@ -163,11 +229,11 @@ const gujarati = {
 };
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('gu');
 
   useEffect(() => {
     const savedLanguage = window.localStorage.getItem('amit-motor-language');
-    if (savedLanguage === 'gu') setLanguage('gu');
+    if (savedLanguage === 'en' || savedLanguage === 'gu') setLanguage(savedLanguage);
   }, []);
 
   useEffect(() => {
@@ -180,8 +246,13 @@ export function LanguageProvider({ children }) {
   }
 
   const translate = text => language === 'gu' && typeof text === 'string' ? gujarati[text] || gujarati[text.trim()] || text : text;
+  const translateProductName = text => {
+    if (language !== 'gu' || typeof text !== 'string') return text;
+    if (gujarati[text] || gujarati[text.trim()]) return gujarati[text] || gujarati[text.trim()];
+    return productTitleTranslations.reduce((title, [pattern, replacement]) => title.replace(pattern, replacement), text);
+  };
 
-  return <LanguageContext.Provider value={{ language, setLanguage: changeLanguage, t: translate }}>{children}</LanguageContext.Provider>;
+  return <LanguageContext.Provider value={{ language, setLanguage: changeLanguage, t: translate, productName: translateProductName }}>{children}</LanguageContext.Provider>;
 }
 
 export function useLanguage() {

@@ -5,11 +5,11 @@ import { useLanguage } from './LanguageProvider';
 import WhatsAppLink from './WhatsAppLink';
 
 export default function ServiceCard({ service, index = 0 }) {
-  const { t } = useLanguage();
+  const { t, productName } = useLanguage();
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [zoomOpen, setZoomOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
-  const translatedTitle = t(service.title);
+  const translatedTitle = productName(service.title);
   const translatedTag = t(typeof service.tag === 'string' ? service.tag.trim() : '');
   const images = service.images || [service.image];
 
