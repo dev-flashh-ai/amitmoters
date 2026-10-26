@@ -984,7 +984,7 @@ html[lang='gu'] body {
 .website-chatbot {
   position: fixed;
   z-index: 31;
-  bottom: 24px;
+  bottom: 80px;
   left: 24px;
 }
 
@@ -1030,7 +1030,7 @@ html[lang='gu'] body {
 
 .website-chatbot-panel {
   position: fixed;
-  bottom: 84px;
+  bottom: 140px;
   left: 24px;
   display: flex;
   width: min(370px, calc(100vw - 48px));
@@ -1464,7 +1464,7 @@ html[data-theme='dark'] .contact-form textarea {
   }
 
   .website-chatbot {
-    bottom: 15px;
+    bottom: 80px;
     left: 14px;
   }
 
@@ -1479,7 +1479,7 @@ html[data-theme='dark'] .contact-form textarea {
   }
 
   .website-chatbot-panel {
-    bottom: 74px;
+    bottom: 140px;
     left: 14px;
     width: min(370px, calc(100vw - 28px));
     max-height: calc(100dvh - 90px);
