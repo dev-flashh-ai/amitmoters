@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useLanguage } from './LanguageProvider';
 
 const banners = [
   { src: '/banners/seat-covers.webp', alt: 'Custom seat covers with a free steering wheel cover offer' },
@@ -11,6 +12,7 @@ const banners = [
 export default function HomeBannerSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     if (isPaused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
@@ -47,12 +49,12 @@ export default function HomeBannerSlider() {
         ))}
       </div>
       <div className="home-slider-controls">
-        <button type="button" aria-label="Previous banner" onClick={() => showBanner(activeIndex - 1)}>‹</button>
-        <div className="home-slider-dots" role="group" aria-label="Choose a banner">
+        <button type="button" aria-label={t('Previous banner')} onClick={() => showBanner(activeIndex - 1)}>‹</button>
+        <div className="home-slider-dots" role="group" aria-label={t('Choose a banner')}>
           {banners.map((banner, index) => (
             <button
               type="button"
-              aria-label={`Show banner ${index + 1}`}
+              aria-label={`${t('Show banner')} ${index + 1}`}
               aria-current={index === activeIndex ? 'true' : undefined}
               className={index === activeIndex ? 'is-active' : ''}
               key={banner.src}
@@ -60,7 +62,11 @@ export default function HomeBannerSlider() {
             />
           ))}
         </div>
-        <button type="button" aria-label="Next banner" onClick={() => showBanner(activeIndex + 1)}>›</button>
+        <button type="button" aria-label={t('Next banner')} onClick={() => showBanner(activeIndex + 1)}>›</button>
+        <div className="language-toggle home-slider-language-toggle" role="group" aria-label={t('Choose language')}>
+          <button type="button" onClick={() => setLanguage('en')} aria-pressed={language === 'en'} lang="en">EN</button>
+          <button type="button" onClick={() => setLanguage('gu')} aria-pressed={language === 'gu'} lang="gu">ગુજરાતી</button>
+        </div>
       </div>
     </section>
   );

@@ -444,6 +444,28 @@ html[lang='gu'] body {
   background: var(--orange);
 }
 
+.home-slider-controls .home-slider-language-toggle {
+  margin-left: 8px;
+}
+
+.home-slider-controls .home-slider-language-toggle button {
+  width: auto;
+  height: auto;
+  min-height: 32px;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 18px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.home-slider-controls .home-slider-language-toggle button[aria-pressed='true'] {
+  background: var(--orange);
+  color: #fff;
+}
+
 .contact-feature-image {
   overflow: hidden;
   margin: 26px 0 0;
