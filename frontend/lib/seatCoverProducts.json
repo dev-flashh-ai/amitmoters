@@ -1,5 +1,18 @@
 [
   {
+    "handle": "premium-custom-leather-seat-covers-amit-motor",
+    "title": "Premium Custom Leather Seat Covers",
+    "description": "Bespoke leather seat covers designed for a premium finish, comfort and long-lasting cabin style.",
+    "image": "/products/amit-motor-custom-seat-cover-1.jpg",
+    "images": [
+      "/products/amit-motor-custom-seat-cover-1.jpg",
+      "/products/amit-motor-custom-seat-cover-2.jpg",
+      "/products/amit-motor-custom-seat-cover-3.jpg",
+      "/products/amit-motor-custom-seat-cover-4.jpg"
+    ],
+    "tag": "Interior"
+  },
+  {
     "handle": "signature-series-car-seat-cover-for-toyota-hycross-2022",
     "title": "Signature Series Car Seat Cover for Toyota Hycross 2022-26 (7 Seater)",
     "description": "OEM-style, factory-fitted seat covers for this vehicle model.",
